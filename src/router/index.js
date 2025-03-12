@@ -11,7 +11,13 @@ const routes = [
   },
   {
     path: "/admin",
-    component: () => import("../pages/admin/index.vue"),
+    component: () => import("../layouts/admin/AppLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("../pages/admin/index.vue"),
+      },
+    ],
   },
 ];
 
